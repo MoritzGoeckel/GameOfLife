@@ -96,12 +96,17 @@ int main()
 
   //Some patterns
 
-  /*field[3][5]->setState(1);
+  field[0][0]->setState(1);
+  field[0][1]->setState(1);
+  field[1][0]->setState(1);
+  field[1][1]->setState(1);
+
+  field[3][5]->setState(1);
   field[3][6]->setState(1);
   field[4][5]->setState(1);
   field[4][6]->setState(1);
 
-  field[3 + 2][5 + 2]->setState(1);
+  /*field[3 + 2][5 + 2]->setState(1);
   field[3 + 2][6 + 2]->setState(1);
   field[4 + 2][5 + 2]->setState(1);
   field[4 + 2][6 + 2]->setState(1);*/
@@ -112,9 +117,9 @@ int main()
   field[11][8]->setState(1);
   field[8][9]->setState(1);
 
-  /*field[20][20]->setState(1);
+  field[20][20]->setState(1);
   field[21][20]->setState(1);
-  field[19][20]->setState(1);*/
+  field[19][20]->setState(1);
 
   //Game Loop
   while (window.isOpen())
@@ -134,7 +139,7 @@ int main()
        for(int xOffset = -1; xOffset <= 1; xOffset++)
         for(int yOffset = -1; yOffset <= 1; yOffset++)
           if(xOffset != 0 || yOffset != 0)
-            aliveNeighbors += (field[(x + xOffset) % (field.size() - 1)][(y + yOffset) % (field[x].size() - 1)]->state == 1 ? 1 : 0);
+            aliveNeighbors += (field[(x + xOffset) % field.size()][(y + yOffset) % field[x].size()]->state == 1 ? 1 : 0);
         field[x][y]->setComment(std::string(" ") + std::to_string(aliveNeighbors));
 
         if(aliveNeighbors < 2 || aliveNeighbors > 3)
