@@ -15,4 +15,5 @@ Run it
 ./exec
 ```
 
+## Screenshot
 ![Screenshot of Conway's Game of Life in modern C++ with SFML](https://github.com/MoritzGoeckel/GameOfLife/blob/master/gof.PNG?raw=true)
