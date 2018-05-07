@@ -1,4 +1,4 @@
-# Conway's Game of Life in modern C++ with SFML
+# Conway's Game of Life in C++
 
 ## How to run it
 Install SFML on Ubuntu:
